@@ -296,7 +296,7 @@
     margin-left: -50px;
   }
   .what-content {
-    padding: 50px;
+    padding: 30px;
     width: 500px;
   }
   .what-content p {
@@ -305,14 +305,14 @@
   .what-noTouch:hover,
   .what-content-active {
     min-height: 67%;
-    padding: 50px;
+    padding: 30px;
   }
 
   .what-noTouch:hover ~ .what-content,
   .what-box-in:hover .what-noTouch:not(:hover),
   .what-content.what-sibling {
     min-height: 33%;
-    padding: 10px 50px;
+    padding: 10px 30px;
   }
 }
 @media only screen and (max-width: 900px) {
