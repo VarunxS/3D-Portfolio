@@ -1,0 +1,206 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(5, 8, 16, 0.85);
+  /* Matches dark aesthetic */
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  animation: modalFadeIn 0.3s forwards;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+@keyframes modalFadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  background: #0d131f;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 1000px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  transform: translateY(20px);
+  animation: modalSlideUp 0.4s forwards cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modalSlideUp {
+  to {
+    transform: translateY(0);
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  z-index: 10;
+}
+
+.modal-close:hover {
+  background: rgba(94, 234, 212, 0.2);
+  color: var(--accentColor);
+}
+
+.modal-header {
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  align-items: center;
+}
+
+.modal-image-wrapper {
+  flex: 0 0 40%;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+}
+
+.modal-image-wrapper img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.modal-title-sec {
+  flex: 1;
+}
+
+.modal-title-sec h2 {
+  font-size: 36px;
+  margin: 0 0 10px 0;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.modal-category {
+  font-size: 16px;
+  color: var(--accentColor);
+  font-weight: 400;
+  margin: 0 0 20px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.modal-tools {
+  margin-top: 20px;
+}
+
+.modal-tools .tools-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.5;
+}
+
+.modal-tools p {
+  margin: 5px 0 0 0;
+  font-size: 15px;
+  color: #adacac;
+}
+
+.modal-pdf-link {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 24px;
+  background: var(--accentColor);
+  color: #000;
+  font-weight: 500;
+  border-radius: 30px;
+  transition: all 0.3s;
+}
+
+.modal-pdf-link:hover {
+  background: #4ccbb8;
+  transform: translateY(-2px);
+}
+
+.modal-body {
+  padding: 40px;
+}
+
+.modal-description .desc-section {
+  margin-bottom: 30px;
+}
+
+.modal-description h3 {
+  font-size: 22px;
+  color: #fff;
+  margin: 0 0 15px 0;
+  font-weight: 500;
+}
+
+.modal-description p {
+  color: #adacac;
+  font-size: 16px;
+  line-height: 1.8;
+  font-weight: 300;
+  margin: 0 0 20px 0;
+}
+
+/* Custom Scrollbar for modal */
+.modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(94, 234, 212, 0.5);
+}
+
+@media only screen and (max-width: 900px) {
+  .modal-header {
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+  }
+
+  .modal-image-wrapper {
+    width: 100%;
+  }
+
+  .modal-body {
+    padding: 30px;
+  }
+
+  .modal-title-sec h2 {
+    font-size: 28px;
+  }
+}
